@@ -20,7 +20,7 @@ Jalankan perintah ini di terminal anda:
 php rakit package:install file-auth
 ```
 
-Buka file `application/package.php` dan tambahkan:
+Buka file `application/packages.php` dan tambahkan:
 
 ```php
 'file-auth' => ['autoboot' => true],
@@ -43,4 +43,4 @@ datanya mengikuti data default di file tersebut.
 Anda boleh menambahkan data lain kedalam file konfigurasi tersebut,
 data tambahan tersebut akan bisa diakses via method `Auth::user()`.
 
-**Pastikan untuk mengubah data konfigurasi default tersebut**
+**Penting: Untuk alasan kemananan, pastikan untuk mengubah data akun default di file konfigurasi**
