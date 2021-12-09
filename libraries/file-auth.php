@@ -4,12 +4,12 @@ namespace Esyede;
 
 defined('DS') or exit('No direct script access.');
 
-use Arr;
-use Hash;
-use Config;
-use Authenticator;
+use System\Arr;
+use System\Hash;
+use System\Config;
+use System\Auth\Drivers\Driver;
 
-class FileAuth extends Authenticator
+class FileAuth extends Driver
 {
     public function retrieve($id)
     {
@@ -19,7 +19,7 @@ class FileAuth extends Authenticator
 
         $users = Config::get('file-auth::users');
         $user = Arr::first($users, function ($key, $config) use ($id) {
-            return $config['id'] === $id;
+            return (int) $config['id'] === $id;
         });
 
         return is_array($user) ? (object) $user : $user;
@@ -32,7 +32,7 @@ class FileAuth extends Authenticator
 
         $user = Arr::first($users, function ($key, $config) use ($arguments, $identifier) {
             return array_key_exists($key, $config)
-                && $arguments[$identifier] === $config[$identifier]
+                && (string) $arguments[$identifier] === (string) $config[$identifier]
                 && Hash::check($arguments['password'], Hash::make($config['password']));
         });
 
