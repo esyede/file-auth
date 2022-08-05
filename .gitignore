@@ -1,0 +1,11 @@
+storage
+vendor
+.phpintel
+.vagrant
+.github
+*.lock
+*.cache
+*.sqlite
+*.bc.php
+*.log
+*.phar
