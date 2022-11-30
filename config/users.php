@@ -16,14 +16,14 @@ defined('DS') or exit('No direct script access.');
 return [
     [
         'id' => 1,
+        'name' => 'Administrator',
         'email' => 'admin@gmail.com',
-        'username' => 'admin',
-        'password' => 'rahasia',
+        'password' => 'password',
     ],
     [
         'id' => 2,
+        'name' => 'Sample User',
         'email' => 'user@gmail.com',
-        'username' => 'user',
-        'password' => 'rahasia',
+        'password' => 'password',
     ],
 ];

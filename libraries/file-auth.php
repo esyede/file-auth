@@ -28,11 +28,10 @@ class FileAuth extends Driver
     public function attempt(array $arguments = [])
     {
         $users = Config::get('file-auth::users');
-        $identifier = Config::get('auth.username');
-
-        $user = Arr::first($users, function ($key, $config) use ($arguments, $identifier) {
-            return array_key_exists($key, $config)
-                && (string) $arguments[$identifier] === (string) $config[$identifier]
+        $user = Arr::first($users, function ($key, $config) use ($arguments) {
+            return isset($arguments['email'])
+                && $arguments['email'] === $config['email']
+                && isset($arguments['password'])
                 && Hash::check($arguments['password'], Hash::make($config['password']));
         });
 

@@ -3,7 +3,7 @@
 Driver otentikasi berbasis file untuk rakit framework.
 
 
-## Apa Gunanya?
+## Tujuan
 
 Ada kalanya, anda hanya memerlukan satu atau dua buah akun di situs dan datanya sangat jarang diubah,
 yang biasanya digunakan untuk mengakses halaman yang diproteksi password, atau sejenisnya.
@@ -43,4 +43,4 @@ datanya mengikuti data default di file tersebut.
 Anda boleh menambahkan data lain kedalam file konfigurasi tersebut,
 data tambahan tersebut akan bisa diakses via method `Auth::user()`.
 
-**Penting: Untuk alasan kemananan, pastikan untuk mengubah data akun default di file konfigurasi**
+**Penting: Untuk kemananan, pastikan untuk mengubah data akun default di file konfigurasi**
